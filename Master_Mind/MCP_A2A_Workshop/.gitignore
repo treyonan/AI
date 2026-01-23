@@ -1,0 +1,33 @@
+# Environment files with credentials -- NEVER COMMIT
+.env
+**/.env
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+ENV/
+env/
+.venv/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Cache files (runtime data)
+mqtt_cache.json
+mqtt_cache.tmp
+mes_cache.json
+mes_cache.tmp

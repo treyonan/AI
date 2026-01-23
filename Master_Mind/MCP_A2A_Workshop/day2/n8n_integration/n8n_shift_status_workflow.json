@@ -1,0 +1,139 @@
+{
+  "name": "Press 103 - Shift Status Check",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "trigger-1",
+      "name": "Manual Trigger",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [0, 0]
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "http://host.docker.internal:8002/equipment/status",
+        "options": {}
+      },
+      "id": "http-status",
+      "name": "Get Equipment Status",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [220, 0]
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "http://host.docker.internal:8002/oee/summary",
+        "options": {}
+      },
+      "id": "http-oee",
+      "name": "Get OEE",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [440, 0]
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "http://host.docker.internal:8002/workorder/active",
+        "options": {}
+      },
+      "id": "http-workorder",
+      "name": "Get Work Order",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [660, 0]
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "// Get data from previous nodes\nconst status = $('Get Equipment Status').first().json;\nconst oee = $('Get OEE').first().json;\nconst workOrder = $('Get Work Order').first().json;\n\n// Build status text\nconst runningText = status.running ? 'RUNNING' : 'STOPPED';\nconst stateText = status.state || 'Unknown';\n\n// Format OEE values\nconst oeeVal = (oee.oee * 100).toFixed(1);\nconst availVal = (oee.availability * 100).toFixed(1);\nconst perfVal = (oee.performance * 100).toFixed(1);\nconst qualVal = (oee.quality * 100).toFixed(1);\n\n// Build observation message\nconst message = `Shift Status Check: Press 103 is ${runningText} (state: ${stateText}). ` +\n  `OEE: ${oeeVal}% (A: ${availVal}%, P: ${perfVal}%, Q: ${qualVal}%). ` +\n  `Work Order ${workOrder.work_order || 'N/A'}: ${workOrder.percent_complete}% complete ` +\n  `(${workOrder.good_count} good, ${workOrder.remaining} remaining).`;\n\nreturn [{\n  json: {\n    message: message,\n    category: 'shift-check'\n  }\n}];"
+      },
+      "id": "code-build",
+      "name": "Build Observation",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [880, 0]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://host.docker.internal:8002/observation",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ $json }}",
+        "options": {}
+      },
+      "id": "http-post",
+      "name": "Post Observation",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1100, 0]
+    }
+  ],
+  "connections": {
+    "Manual Trigger": {
+      "main": [
+        [
+          {
+            "node": "Get Equipment Status",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Equipment Status": {
+      "main": [
+        [
+          {
+            "node": "Get OEE",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get OEE": {
+      "main": [
+        [
+          {
+            "node": "Get Work Order",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Work Order": {
+      "main": [
+        [
+          {
+            "node": "Build Observation",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build Observation": {
+      "main": [
+        [
+          {
+            "node": "Post Observation",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 0,
+  "pinData": {}
+}

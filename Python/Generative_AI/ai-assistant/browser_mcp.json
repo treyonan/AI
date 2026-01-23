@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "Bright Data": {
+      "command": "npx",
+      "args": ["@brightdata/mcp"],
+      "env": {
+        "API_TOKEN": "830673d0992e148d26673213703b2f8801da5299bcf47c750add5cde5e258c05",
+        "WEB_UNLOCKER_ZONE": "web_unlocker4",
+        "BROWSER_AUTH": "<optional if you want to enable remote browser control tools>"
+      }
+    }
+  }
+}

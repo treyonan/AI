@@ -1,2 +1,150 @@
-/venv/
-/.idea/
+############################################
+# Python / Virtual Environments / Caches
+############################################
+**/venv/
+**/.venv/
+**/env/
+**/.env/
+**/ENV/
+**/env.bak/
+**/venv.bak/
+
+**/__pycache__/
+**/*.py[cod]
+**/*$py.class
+
+# Pytest / coverage
+**/.pytest_cache/
+**/.coverage
+**/.coverage.*
+**/htmlcov/
+**/.mypy_cache/
+**/.ruff_cache/
+**/.tox/
+**/.nox/
+
+# Jupyter
+**/.ipynb_checkpoints/
+
+############################################
+# Secrets / Credentials / Private Keys
+############################################
+# Environment files (you already had this)
+**/.env
+**/.env.*
+**/*.env
+**/*.env.*
+
+# Common secret files
+**/secrets.*
+**/*secret*
+**/*secrets*
+**/*credentials*
+**/*credential*
+**/*apikey*
+**/*api_key*
+**/*token*
+**/*tokens*
+**/*private*
+
+# SSH / TLS keys & certs (never commit private keys)
+**/*.pem
+**/*.key
+**/*.pfx
+**/*.p12
+**/*.crt
+**/*.cer
+**/*.csr
+**/*.der
+**/*.jks
+**/*.keystore
+
+# AWS / Azure / GCP local credential files
+**/.aws/
+**/.azure/
+**/.config/gcloud/
+**/*service-account*.json
+
+############################################
+# Logs / Dumps / Local Databases
+############################################
+**/*.log
+**/*.log.*
+**/logs/
+**/*.out
+**/*.err
+
+# DB / local state
+**/*.db
+**/*.sqlite
+**/*.sqlite3
+**/*.bak
+**/*.backup
+**/*.dump
+
+############################################
+# Data Files (you already had CSV/Excel)
+############################################
+**/*.csv
+**/*.xlsx
+**/*.xls
+**/*.xlsm
+
+# Other large / data formats that commonly shouldn't be tracked
+**/*.parquet
+**/*.feather
+**/*.pickle
+**/*.pkl
+
+############################################
+# OS Junk
+############################################
+**/.DS_Store
+**/Thumbs.db
+**/Desktop.ini
+
+############################################
+# IDE / Editor
+############################################
+.vscode/
+**/.idea/
+**/*.iml
+**/.project
+**/.classpath
+**/.settings/
+
+############################################
+# Node / Web (if you ever do JS/TS builds)
+############################################
+**/node_modules/
+**/dist/
+**/build/
+**/.next/
+**/.nuxt/
+**/.cache/
+
+############################################
+# Build / Packaging Artifacts
+############################################
+**/build/
+**/dist/
+**/*.egg-info/
+**/.eggs/
+**/*.whl
+
+############################################
+# Temporary / Swap / Backup files
+############################################
+**/*.tmp
+**/*.temp
+**/*.swp
+**/*.swo
+**/*~
+**/*.bak
+**/*.old
+
+############################################
+# Optional: local config overrides (safe defaults)
+############################################
+**/*.local
+**/*.local.*

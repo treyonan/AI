@@ -1,0 +1,6 @@
+# Production Agent - A2A Server Dependencies
+fastapi>=0.104.0
+uvicorn>=0.24.0
+paho-mqtt>=2.0.0
+mysql-connector-python>=8.0.0
+python-dotenv>=1.0.0
