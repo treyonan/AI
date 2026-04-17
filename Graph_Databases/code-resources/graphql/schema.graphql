@@ -1,0 +1,33 @@
+# graphql schema 
+
+type Product{
+    id: ID!
+    name: String!
+    price: Float!
+}
+
+type User{
+    id: ID!
+    username: String!
+    email: String!
+    orders: [Order]
+}
+
+type Order{
+    id: ID!
+    date: String
+    products: [Product]
+    totalAmount: Float!
+}
+
+type Query {
+
+    users: [User!]!
+    products: [Product!]!
+}
+
+type Mutation {
+    createUser(username: String!, email: String!): User!
+    createProduct(name: String!, price: Float!): Product!
+    createOrder(userId: ID!, productIds: [ID!]!): Order!
+}

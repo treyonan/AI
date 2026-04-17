@@ -1,0 +1,101 @@
+interceptor_start_point,interceptor_end_point,distance_km,time,speed_limit_kmh,road_type,traffic_factor
+Tiffany Alley,Andrew Cliffs,59.76,32.3,50,main road,1.65
+Eaton Crossroad,Michael Street,38.63,36.79,110,main road,1.08
+Heather Cliffs,Leblanc Spur,18.65,20.35,50,residential,1.49
+Kevin Pines,Fields Stravenue,79.93,63.1,130,main road,1.72
+Rogers Lane,Adrienne Ranch,69.4,101.56,90,highway,1.42
+Brad Burgs,Vazquez Stravenue,5.54,3.43,70,highway,1.09
+Jamie Lodge,Alex Plain,79.92,119.88,30,main road,1.82
+Johnson Curve,Denise Oval,31.63,25.3,130,dirt road,0.51
+Paul Plaza,Michael Streets,21.52,23.48,30,residential,1.11
+Hooper Drives,Hickman Islands,0.18,0.19,70,main road,1.41
+Lori Crest,Leblanc Spur,1.08,0.97,130,dirt road,1.56
+Amy Junction,Eaton Crossroad,67.54,67.54,70,main road,1.59
+Palmer Oval,Garcia Creek,12.44,15.88,70,highway,1.2
+Michael Streets,Michelle Lake,31.14,15.97,130,residential,0.95
+Brown Point,Garcia Creek,77.28,149.57,50,residential,0.69
+Rivera Shore,Hernandez Vista,59.72,35.48,50,highway,1.77
+Hickman Islands,Flores Bypass,54.02,42.09,110,main road,1.24
+Ewing Port,Francis Square,58.31,145.78,30,main road,0.63
+Powell Streets,Brown Gateway,91.38,48.95,90,main road,1.51
+Buckley Fields,Amy Junction,91.0,63.49,70,residential,0.96
+Alex Dale,Frank Causeway,79.28,61.78,30,main road,0.82
+Holder Ranch,Michelle Lake,33.14,46.24,50,dirt road,1.47
+Jordan Locks,Lambert Underpass,30.06,20.04,130,dirt road,1.69
+Jennifer Heights,Miller Prairie,10.25,13.98,90,highway,1.47
+Andrew Shores,Johnson Curve,39.98,79.96,110,dirt road,1.18
+Cardenas Throughway,Taylor Summit,9.01,12.87,50,highway,1.76
+Garcia Creek,Miller Prairie,3.29,9.87,90,dirt road,1.86
+Teresa Vista,Michael Streets,68.52,137.04,30,highway,0.65
+Frank Causeway,Weber Land,0.13,0.11,30,highway,1.75
+Julia Fords,Michael Streets,17.91,16.79,90,main road,0.67
+Daniel Circle,James Motorway,6.91,4.41,30,highway,1.38
+Lambert Underpass,Joe Club,21.02,12.74,30,main road,1.51
+Hawkins Stream,Michelle Lake,2.97,4.35,70,dirt road,1.44
+Leon Passage,Hickman Islands,87.97,142.65,30,residential,0.89
+Boone Prairie,Henry Key,20.36,33.02,90,main road,0.77
+Miller Prairie,Eaton Crossroad,35.63,97.17,30,residential,0.52
+John Harbors,Powell Streets,89.58,51.19,30,main road,1.21
+Wiley Falls,Julia Fords,49.14,25.86,30,main road,1.58
+Barbara Park,Alex Dale,82.24,234.97,90,residential,0.5
+Carter Road,Riley Tunnel,48.07,42.41,70,highway,0.71
+Francis Square,Leblanc Spur,32.28,26.9,50,residential,1.51
+Brown Isle,Johnson Well,13.09,9.13,110,dirt road,1.74
+Vazquez Stravenue,Erin Island,63.26,33.59,50,highway,0.85
+Bass Junction,Nicholas Inlet,41.97,35.97,90,highway,0.7
+Brown Gateway,Daniel Circle,3.79,2.37,30,residential,1.75
+Gloria Stravenue,David Lodge,87.95,68.53,130,highway,1.25
+Nicholas Inlet,Jordan Locks,7.6,11.4,30,main road,0.51
+Fields Stravenue,Brandon Bridge,14.27,10.32,50,highway,1.38
+Daugherty Brooks,Hernandez Centers,41.21,31.7,130,dirt road,1.79
+Nelson Land,Andrew Cliffs,23.1,21.0,30,highway,1.38
+Henry Key,Kennedy Rapid,24.74,38.06,110,dirt road,1.35
+Allison Terrace,Heather Cliffs,88.57,171.43,90,highway,1.34
+Carolyn Pines,Candice Spurs,89.36,243.71,70,highway,1.78
+Nixon Parkways,Amy Junction,32.02,18.65,130,dirt road,1.81
+Orozco Corners,Andrew Shores,59.71,81.42,90,main road,1.34
+Michelle Lake,Wood Dale,23.04,30.72,130,highway,0.56
+Crystal Knoll,Joe Club,38.18,27.27,70,main road,0.9
+Leblanc Spur,Amber Run,96.43,62.21,30,dirt road,1.32
+Wood Dale,David Lodge,42.12,25.53,90,main road,1.47
+Daniels Point,Lambert Underpass,18.12,10.98,30,highway,1.04
+Hernandez Vista,Brown Point,26.26,16.59,50,dirt road,1.32
+Joe Club,Amber Run,16.62,12.62,90,highway,1.01
+Paula Track,Amber Run,13.92,7.73,50,dirt road,1.65
+Alex Plain,Julia Fords,40.82,26.91,30,main road,1.82
+Todd Mountains,Erin Island,57.47,28.98,110,highway,0.67
+Robertson Prairie,Hernandez Vista,51.44,34.68,110,main road,1.44
+Thornton Spur,Eaton Crossroad,89.75,119.67,50,highway,0.64
+Michael Street,Henry Key,47.36,50.74,30,highway,1.96
+Catherine Pike,Amber Run,23.08,14.89,110,highway,1.92
+David Forge,Amy Junction,17.86,12.46,90,residential,1.03
+Michelle Oval,David Forge,50.46,89.05,90,main road,0.6
+Candice Spurs,Lori Crest,42.41,28.27,70,highway,1.29
+Dudley Center,Larry Land,24.11,30.78,130,highway,1.85
+Riley Tunnel,Allison Terrace,8.31,18.47,90,residential,0.91
+Melissa Cliffs,Buckley Fields,97.73,80.33,70,highway,1.84
+Weber Land,Michael Street,25.31,25.74,30,residential,1.31
+Johnson Well,Andrew Shores,39.74,39.74,130,residential,0.7
+Hernandez Centers,Johnson Well,53.73,82.66,30,dirt road,1.23
+Taylor Summit,Pearson Hill,59.27,148.18,30,highway,1.48
+Elliott Prairie,Candice Spurs,60.24,129.09,30,highway,1.65
+Erin Island,Carter Road,1.33,0.73,50,residential,1.15
+David Stravenue,Lambert Underpass,6.05,3.21,30,residential,1.04
+Mark Lights,Nicholas Inlet,32.15,19.89,90,main road,1.85
+Adrienne Ranch,Nicholas Inlet,48.73,66.45,30,highway,1.4
+Andrew Cliffs,Brad Burgs,33.66,23.48,110,dirt road,1.77
+Brandon Bridge,Fields Stravenue,77.91,48.69,70,highway,1.41
+Amber Run,Frank Causeway,54.66,93.7,70,highway,1.4
+Joshua Flat,Brown Point,46.01,65.73,110,highway,1.87
+James Motorway,Johnson Curve,23.88,18.61,50,residential,0.74
+David Lodge,Brown Gateway,31.46,29.49,30,highway,1.64
+Valdez Plain,Barbara Park,60.6,60.6,110,residential,1.03
+Brandon Circles,Teresa Vista,66.02,80.84,50,highway,1.69
+Larry Land,Hickman Islands,7.94,4.0,90,highway,1.5
+Herrera Station,Andrew Cliffs,13.51,7.95,90,dirt road,0.51
+Sheila Plaza,David Stravenue,54.45,53.56,50,residential,0.97
+Kennedy Rapid,Gloria Stravenue,62.66,41.31,130,highway,0.87
+Vega Ferry,Cardenas Throughway,18.31,17.72,90,highway,1.47
+Pearson Hill,Wood Dale,77.07,46.24,90,residential,1.79
+Denise Oval,Palmer Oval,5.28,3.56,30,residential,0.89
+Flores Bypass,Rogers Lane,56.92,34.5,130,highway,1.11

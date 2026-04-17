@@ -1,0 +1,8 @@
+Faker 
+neo4j
+python-dotenv 
+requests
+ariadne 
+langchain_openai 
+langchain_core 
+langchain 

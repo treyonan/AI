@@ -1,0 +1,120 @@
+--------------- RDF Turtle ------------------
+
+@prefix ex: <http://example.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+ex:Customer001 a ex:Customer ;
+    ex:name "John"^^xsd:string ;
+    ex:dateOfBirth "1985-07-20"^^xsd:date ;
+    ex:hasMedicalRecord ex:MedicalRecord_MED123 ;
+    ex:hasGovernmentRecord ex:GovRecord_GOV567 ;
+    ex:hasPurchaseRecord ex:PurchaseRecord_PUR789 .
+
+# Medical record with datatype
+ex:MedicalRecord_MED123 a ex:MedicalRecord ;
+    ex:bloodGroup "B+"^^xsd:string ;
+    ex:allergy "Penicillin"^^xsd:string ;
+    ex:medicalID "MED123"^^xsd:string .
+
+# Government record with owl:sameAs link
+ex:GovRecord_GOV567 a ex:GovernmentRecord ;
+    ex:passportNumber "P123456"^^xsd:string ;
+    ex:aadhaarNumber "1234-4567-1123"^^xsd:string ;
+    ex:govID "GOV567"^^xsd:string ;
+    owl:sameAs <http://gov.example.org/customer/GOV567> .
+
+# Purchase record with typed date
+ex:PurchaseRecord_PUR789 a ex:PurchaseRecord ;
+    ex:purchasedItem "Laptop"^^xsd:string ;
+    ex:purchasedDate "2025-01-25"^^xsd:date ;
+    ex:purchasedID "PUR789"^^xsd:string .
+
+ex:Customer002 a ex:Customer ;
+    ex:name "Alice"^^xsd:string ;
+    ex:dateOfBirth "1985-07-22"^^xsd:date ;
+    ex:hasMedicalRecord ex:MedicalRecord_MED1234 ;
+    ex:hasGovernmentRecord ex:GovRecord_GOV5678 ;
+    ex:hasPurchaseRecord ex:PurchaseRecord_PUR7890 .
+
+# Medical record with datatype
+ex:MedicalRecord_MED1234 a ex:MedicalRecord ;
+    ex:bloodGroup "A+"^^xsd:string ;
+    ex:allergy "Penicillin"^^xsd:string ;
+    ex:medicalID "MED1234"^^xsd:string .
+
+# Government record with owl:sameAs link
+ex:GovRecord_GOV5678 a ex:GovernmentRecord ;
+    ex:passportNumber "P123456"^^xsd:string ;
+    ex:aadhaarNumber "1234-4567-0000"^^xsd:string ;
+    ex:govID "GOV5678"^^xsd:string ;
+    owl:sameAs <http://gov.example.org/customer/GOV5678> .
+
+# Purchase record with typed date
+ex:PurchaseRecord_PUR7890 a ex:PurchaseRecord ;
+    ex:purchasedItem "Iphone"^^xsd:string ;
+    ex:purchasedDate "2025-01-26"^^xsd:date ;
+    ex:purchasedID "PUR7890"^^xsd:string .
+
+
+---------------- SPARQL query -------------------
+
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX ex: <http://example.org/>
+
+SELECT ?customer ?blood ?passport ?item ?allergy
+WHERE {
+  ?customer a ex:Customer ;
+            ex:hasMedicalRecord ?med ;
+            ex:hasGovernmentRecord ?gov ;
+            ex:hasPurchaseRecord ?pur .
+
+  ?med ex:bloodGroup ?blood ;
+       ex:allergy ?allergy .
+
+  ?gov ex:passportNumber ?passport .
+
+  ?pur ex:purchasedItem ?item .
+}
+
+# 1. Get the customer who purchased a laptop and has blood group B+
+SELECT ?customer ?name
+WHERE {
+  ?customer a ex:Customer ;
+            ex:name ?name ;
+            ex:hasPurchaseRecord ?purchase ;
+            ex:hasMedicalRecord ?med .
+
+  ?purchase ex:purchasedItem "Laptop"^^xsd:string .
+  ?med ex:bloodGroup "B+"^^xsd:string .
+}
+
+
+# 2. Get customers who purchased a laptop after 2025-01-14
+SELECT ?customer ?name ?purchasedDate
+WHERE {
+  ?customer a ex:Customer ;
+            ex:name ?name ;
+            ex:hasPurchaseRecord ?purchase .
+
+  ?purchase ex:purchasedItem "Laptop"^^xsd:string ;
+            ex:purchasedDate ?purchasedDate .
+
+  FILTER ( ?purchasedDate > "2025-01-14"^^xsd:date )
+}
+ORDER BY ?purchasedDate 
+
+# 3. Who has “Penicillin” allergy and purchased a laptop?
+SELECT ?customer ?name 
+WHERE {
+    ?customer a ex:Customer;
+                ex:name ?name;
+                ex:hasPurchaseRecord ?purchase ;
+                ex:hasMedicalRecord ?med .
+    
+    ?med ex:allergy "Penicillin"^^xsd:string .
+    ?purchase ex:purchasedItem "Iphone"^^xsd:string .
+    
+    
+}
+
